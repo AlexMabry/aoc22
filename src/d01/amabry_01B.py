@@ -11,10 +11,11 @@ input_data = parse_data(puzzle.input_data)
 # Solve puzzle
 calories = [0]
 for row in input_data:
-    if row == '':
-        calories.append(0)
-    else:
+    if row:
         calories[-1] += int(row)
+    else:
+        calories.append(0)
+
 
 answer_to_submit = sum(sorted(calories)[-3:])
 ############################
