@@ -8,10 +8,19 @@ puzzle = models.Puzzle(year=2022, day=2)
 input_data = parse_data(puzzle.input_data)
 
 ############################
-# Solve puzzle
-print(input_data)
+score = {
+    ('B', 'X'): 1,
+    ('C', 'Y'): 2,
+    ('A', 'Z'): 3,
+    ('A', 'X'): 4,
+    ('B', 'Y'): 5,
+    ('C', 'Z'): 6,
+    ('C', 'X'): 7,
+    ('A', 'Y'): 8,
+    ('B', 'Z'): 9,
+}
 
-answer_to_submit = None
+answer_to_submit = sum([score[tuple(row.split(' '))] for row in input_data])
 ############################
 
 # submit answer
