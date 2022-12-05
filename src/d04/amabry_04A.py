@@ -10,7 +10,7 @@ input_data = parse_data(puzzle.input_data, regex=r'([0-9]+)-([0-9]+),([0-9]+)-([
 ############################
 # Solve puzzle
 numbers = [[int(n) for n in row] for row in input_data]
-overlaps = [1 for (a, b, c, d) in numbers if (a == c) or (b == d) or (a > c) != (b > d)]
+overlaps = [1 for (a, b, c, d) in numbers if (a <= c <= d <= b) or (c <= a <= b <= d)]
 
 answer_to_submit = sum(overlaps)
 ############################
