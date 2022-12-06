@@ -5,14 +5,17 @@ from src.utils import parse_data
 puzzle = models.Puzzle(year=2022, day=6)
 
 # format data
-# input_data = parse_data(puzzle.input_data)
-input_data = parse_data(puzzle.example_data)
+input_data = parse_data(puzzle.input_data)[0]
+# input_data = parse_data(puzzle.example_data)[0]
 
 ############################
 # Solve puzzle
-print(input_data)
+marker = 14
+for i in range(len(input_data)-marker):
+    if len(set(input_data[i:i+marker])) == marker:
+        break
 
-answer_to_submit = None
+answer_to_submit = i+marker
 ############################
 
 # submit answer
