@@ -5,7 +5,8 @@ from src.utils import parse_data
 puzzle = models.Puzzle(year=2022, day=11)
 
 # format data
-input_data = parse_data(puzzle.input_data)
+# input_data = parse_data(puzzle.input_data)
+input_data = parse_data(puzzle.example_data)
 
 ############################
 # Solve puzzle
